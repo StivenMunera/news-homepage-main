@@ -2,6 +2,16 @@ body{
   width: 1440px;
   height: 1024px;
 }
+
+h2{
+  color:#FFFF33;
+}
+
+
+.h2white{
+  color:white;
+}
+
 nav {
   display: flex;
   justify-content: end;
@@ -40,6 +50,11 @@ h1 {
   line-height: 1.2;
 }
 
+
+.h2gray{
+  color: gray;
+}
+
 .section1 {
   position: relative;
 }
@@ -73,9 +88,7 @@ aside {
   
 }
 
-h2{
-  color: gray;
-}
+
 
 h4{
   color: gray;
