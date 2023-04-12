@@ -7,6 +7,10 @@ h2{
   color:#FFFF33;
 }
 
+h3{
+  font-size: 22px;
+}
+
 
 .h2white{
   color:white;
@@ -21,6 +25,16 @@ nav {
   margin-right: 225px;
   font-size: 20px;
   line-height: 1.2;
+}
+
+a{
+  text-decoration: none;
+  color:gray;
+}
+
+.boton{
+  width: 80px;
+  margin-left: 12px;
 }
 
 h1 {
@@ -92,6 +106,8 @@ aside {
 
 h4{
   color: gray;
+  font-size: 17px;
+
 }
 
 button{
