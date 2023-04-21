@@ -1,142 +1,267 @@
-body{
-  width: 1440px;
-  height: 1024px;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");/*importando una fuente llamada "Inter" desde Google Fonts en los pesos de fuente 400, 700 y 800 */
+/*significa que se aplicará a todos los elementos HTML en tu página web.*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+}
+/*Garantizan que las imágenes se ajusten al ancho del contenedor, lo que ayuda a que el diseño de la página web sea más flexible*/ 
+img {
+  max-width: 100%;
+  width: 100%;
+}
+/*los marcadores de lista serán eliminados*/
+ul {
+  list-style-type: none;
+}
+/*establecen la altura de línea y el color del texto dentro de los elementos de párrafo en la página web.*/
+p {
+  line-height: 1.8;
+  color: hsl(236, 13%, 42%);
 }
 
-h2{
-  color:#FFFF33;
+/* Establecen el ancho máximo del elemento <body>, centran el contenido horizontalmente dentro del elemento y agregan un relleno inferior*/ 
+body {
+  max-width: 1200px;
+  margin: auto;
+  padding-bottom: 4rem;
 }
 
-h3{
-  font-size: 22px;
-}
-
-hr{
-  width: 270px;
-  color: gray;
-}
-
-p{
-  color: gray;
-}
-
-
-.h2white{
-  color:white;
-}
-
-nav {
+.header {
   display: flex;
-  top:0;
-  left: 990px;
-  margin-top: 58px;
-  margin-right: 225px;
-  font-size: 20px;
-  line-height: 1.2;
-}
-
-a{
-  text-decoration: none;
-  color:gray;
-
-}
-
-.boton{
-  width: 80px;
-  margin-left: 12px;
- 
-}
-
-h1 {
-  font-size: 50px;
-  margin-left: 90px;
-    
-}
-
-.h1w {
-  font-size: 50px;
-  margin-left: 90px;
-  font-size: 50px;
-  line-height: 1.2;
-  margin-left: 90px;
-  line-height: 1.2;
-  
-}
-
-.text1 {
-  position: absolute;
-  top: 40px;
-  right: 0;
-  margin-top: 340px;
-  margin-right: 650px;
-  font-size: 20px;
-  line-height: 1.2;
-}
-
-
-.h2gray{
-  color: gray;
-}
-
-.section1 {
-  position: relative;
-
-}
-
-.imagen1 {
-  display: flex;
-  height: 320px;
-  width: 830px;
-  margin-left: 90px;
-}
-
-.section2 {
-  display: flex;
-  position: relative;
+  align-items: center;
   justify-content: space-between;
+  padding: 1.25rem;
 }
 
-aside {
+.header nav #menu-close {
+  background: transparent;
+  border: none;
+  outline: none;
   position: absolute;
-  top: 165px;
+  right: 1.25rem; 
+  top: 1.25rem;
+  z-index: 99999;
+  cursor: pointer;/* Establece el cursor del mouse para indicar que el elemento es interactivo y puede ser seleccionado.*/
+}
+/*apariencia inicial del elemento <nav> como completamente transparente y detrás de otros elementos en la página*/
+.header nav {
+  opacity: 0;
+  z-index: -999;
+  transition: all 0.3s ease-in-out;
+}
+
+.header nav.open {
+  position: fixed;
   right: 0;
-  width: 300px;
-  left: 1000px;
-  background-color: #010129;
-  font:white;
+  top: 0;
+  bottom: 0;
+  width: 75vw;
+  background-color: white;
+  padding: 1.25rem;
+  opacity: 1;
+  z-index: 99999999999;
 }
 
-.foot {
+.header nav ul {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header nav ul li {
+  margin: 1.5rem 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.header nav ul li:hover {
+  color: hsl(5, 85%, 63%);
+}
+
+.header .menu-button button {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.showcase {
+  padding: 1.25rem;
+  padding-top: 0;
+}
+/* los elementos h1 que se encuentren dentro del elemento con la clase showcase*/
+.showcase h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: hsl(240, 100%, 5%);
+  margin: 1rem 0;
+}
+/* todos los elementos p que se encuentren dentro del primer elemento article que está dentro del primer elemento div que se encuentre dentro del elemento con la clase showcase*/
+.showcase div:first-child article p {
+  margin-bottom: 1rem;
+}
+/*y aca lo mismo pero con boton*/
+.showcase div:first-child article button {
+  background-color: hsl(5, 85%, 63%);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  transition: all 0.3s ease-in-out;
+}
+/*Al hacer hover, el fondo del botón cambia a un color diferente y se cambia el cursor a "pointer", indicando que se puede hacer clic en el botón.*/
+.showcase div:first-child article button:hover {
+  background-color: hsl(240, 100%, 5%);
+  cursor: pointer;
+}
+/* el segundo div dentro de "showcase"). Este div tiene un fondo de color específico, un margen superior y un relleno en la parte superior y en los lados.*/
+.showcase > div:last-child {
+  background-color: hsl(240, 100%, 5%);
+  margin-top: 2rem;
+  padding: 1.25rem 1.25rem 0;
+}
+/*este estilo cambiará el color del texto de cualquier elemento "h2" que se encuentre dentro del último div hijo directo del elemento con clase "showcase" a un tono de amarillo-verde suave*/
+.showcase > div:last-child h2 {
+  color: hsl(35, 77%, 62%);
+}
+/*agregará un espacio de relleno en la parte superior e inferior del elemento "article" que se encuentra dentro del último div hijo directo del elemento con clase "showcase".*/
+.showcase > div:last-child article {
+  padding: 1.25rem 0;
+}
+/*este estilo crea una separación visual entre los elementos "article" en el último "div" del "showcase".*/
+.showcase > div:last-child article:not(:last-child) {
+  border-bottom: 1px solid hsl(236, 13%, 42%);/* establece un borde inferior*/
+}
+/*estilo se aplica a todos los elementos h3 que se encuentren dentro del último elemento div que está dentro del elemento con clase showcase.*/
+.showcase > div:last-child h3 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+/*Este estilo cambia el color del texto a un tono de verde azulado y establece la propiedad cursor a pointer, lo que indica que el elemento es interactivo y puede ser seleccionado o hecho clic.*/
+.showcase > div:last-child h3:hover {
+  color: hsl(35, 77%, 62%);
+  cursor: pointer;
+}
+/*el estilo a los ultimos elementos de la pagina como son imagen y texto en frente*/
+.cards {
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2.5rem;
+}
+
+.cards article {
   display: flex;
-  height: 280px;
-  margin-left:90px;
- 
-  
+  align-items: center;
+  gap: 1.25rem;
 }
 
-
-
-h4{
-  color: gray;
-  font-size: 17px;
-
-}
-
-button{
-  background-color:hsl(5, 85%, 63%);
-  height: 45px;
+.cards article img {
   width: 150px;
-  color: white;
-  border-color: hsl(5, 85%, 63%);
-  letter-spacing: 2px;
 }
 
-.pie{
-  width: 320px;
-  height: 150px;
-  margin-left: 12px;
+.cards article span {
+  color: hsl(236, 13%, 42%);
+  font-weight: bold;
+  font-size: 2rem;
+  opacity: 75%;
 }
 
+.cards article h4 {
+  font-size: 1.25rem;
+  color: hsl(240, 100%, 5%);
+  margin: 1rem 0;
+}
 
+.attribution {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 2rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
 
+@media (min-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+  }
+}
 
+@media (min-width: 1024px) {
+  .header {
+    padding: 2rem 1.25rem;
+  }
+
+  .header nav {
+    opacity: 1;
+    z-index: auto;
+    width: 100%;
+  }
+
+  .header nav.open {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+    z-index: auto;
+  }
+
+  .header nav #menu-close {
+    display: none;
+  }
+
+  .header nav ul {
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    transform: translateY(0%);
+  }
+
+  .header nav ul li {
+    margin: 0;
+  }
+
+  .header .menu-button button {
+    display: none;
+  }
+
+  .showcase {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .showcase h1 {
+    font-size: 3rem;
+  }
+
+  .showcase > div:first-child article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    place-items: center;
+    margin-top: 2rem;
+  }
+
+  .showcase > div:last-child {
+    margin-top: 0;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
