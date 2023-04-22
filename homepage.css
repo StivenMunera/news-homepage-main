@@ -46,12 +46,13 @@ body {
   z-index: 99999;
   cursor: pointer;/* Establece el cursor del mouse para indicar que el elemento es interactivo y puede ser seleccionado.*/
 }
-/*apariencia inicial del elemento <nav> como completamente transparente y detrás de otros elementos en la página*/
+/*Apariencia inicial del elemento <nav> como completamente transparente y detrás de otros elementos en la página*/
 .header nav {
   opacity: 0;
   z-index: -999;
   transition: all 0.3s ease-in-out;
 }
+
 
 .header nav.open {
   position: fixed;
@@ -156,7 +157,7 @@ body {
   grid-template-columns: repeat(1, 1fr);
   gap: 2.5rem;
 }
-
+/*Este estilo está aplicado a todos los elementos article que se encuentran dentro del contenedor con la clase .cards.specifica que el artículo debe mostrarse como un elemento flex, lo que significa que sus elementos internos se alinearán horizontalmente.*/
 .cards article {
   display: flex;
   align-items: center;
@@ -166,7 +167,7 @@ body {
 .cards article img {
   width: 150px;
 }
-
+/*Este estilo le está dando a los elementos span dentro de los artículos dentro de la sección de tarjetas (cards) un color, */
 .cards article span {
   color: hsl(236, 13%, 42%);
   font-weight: bold;
@@ -179,7 +180,7 @@ body {
   color: hsl(240, 100%, 5%);
   margin: 1rem 0;
 }
-
+/*define la apariencia de un elemento HTML que contiene atribuciones, probablemente utilizadas en la sección "Créditos"*/
 .attribution {
   font-size: 14px;
   text-align: center;
@@ -188,7 +189,7 @@ body {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
-
+/*se aplicará cuando el ancho de la pantalla sea mayor o igual a 768 píxeles. Dentro de esta regla, se redefine la presentación de los elementos con clase .cards para que se muestren en dos columnas en lugar de una sola*/
 @media (min-width: 768px) {
   .cards {
     display: grid;
@@ -196,7 +197,7 @@ body {
     margin-top: 2rem;
   }
 }
-
+/*se aplicará cuando el ancho de la pantalla sea mayor o igual a 768 píxeles.*/
 @media (min-width: 1024px) {
   .header {
     padding: 2rem 1.25rem;
